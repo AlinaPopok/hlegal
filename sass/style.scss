@@ -1,0 +1,27 @@
+
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+@use 'services';
+@use 'partners';
+@use 'normalize';
+
+*{
+    box-sizing: border-box;
+}
+body{
+    color: map.get(variables.$colors, 'text');
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}

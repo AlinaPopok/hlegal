@@ -1,0 +1,131 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+
+.partners {
+    background: map-get(variables.$colors, 'text');
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.partners-title {
+    color: #323264;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.partners-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.partner-card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 3/1;
+    overflow: hidden;
+    &:nth-child(n+7) {
+        display: none;
+    }
+}
+
+.partner-card-1 {
+    background-color: #1C4280;
+}
+
+.partner-card-2 {
+    background-color: #143646;
+}
+
+.partner-card-3 {
+    background: linear-gradient(0deg, #F48B30 0%, #F48B30 100%);
+}
+
+.partner-card-4 {
+    background-color: #9E4DC3;
+}
+
+.partner-card-5 {
+    background-color: #FD9339;
+}
+
+.partner-card-6 {
+    background-color: #E2E2E4;
+}
+
+.partner-card-7 {
+    background-color: #C71C36;
+}
+
+.partner-card-8 {
+    background-color: #DCF3F9;
+}
+
+.partner-card-9 {
+    background-color: #EAEAEA;
+}
+
+.partner-card-10 {
+    background-color: #282240;
+}
+
+.partner-card-11 {
+    background-color: #1D4568;
+}
+
+.partner-card-12 {
+    background-color: #000;
+}
+
+
+@media (min-width: 768px) {
+    .partners-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .partner-card:nth-child(n+7) {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .partners-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .wrapper-partners {
+        max-width: 1600px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 160px;
+        padding-left: 160px;
+    }
+
+    .partner-card-1 {
+        @include mixins.borderRadius(top, left);
+    }
+
+    .partner-card-4 {
+        @include mixins.borderRadius(top, right);
+    }
+
+    .partner-card-9 {
+        @include mixins.borderRadius(bottom, left);
+    }
+
+    .partner-card-12 {
+        @include mixins.borderRadius(bottom, right);
+    }
+}

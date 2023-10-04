@@ -1,0 +1,128 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+
+.wrapper {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.services {
+    padding-top: 60px;
+    position: relative;
+    @include mixins.bodyColor;
+    @include mixins.borderRadius(bottom, left);
+    @include mixins.borderRadius(bottom, right);
+
+    &:before {
+        @include mixins.beforeAfter(10px);
+        position: absolute;
+        bottom: -20px;
+        left: 40px;
+        right: 40px;
+        @include mixins.borderRadius(bottom, left);
+        @include mixins.borderRadius(bottom, right);
+        background-color: rgba(202, 202, 219, 1);
+
+    }
+
+    &:after {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        @include mixins.beforeAfter(10px);
+        background-color: rgba(231, 231, 242, 1);
+        @include mixins.borderRadius(bottom, left);
+        @include mixins.borderRadius(bottom, right);
+    }
+}
+
+.text__subtitle {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: map.get(variables.$colors, 'subtitle');
+
+    &::after {
+        @include mixins.beforeAfter(12px, 12px);
+        @include mixins.backgroundImg('../images/arrow-left.png');
+    }
+}
+
+.text__title {
+    @include mixins.titleColor;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.card {
+    &-logo {
+        position: relative;
+        border-radius: 24px;
+        background-color: map-get(variables.$colors, 'text');
+        margin-bottom: 30px;
+        width: 92px;
+        height: 92px;
+    }
+    &-img{
+        @include mixins.positionCenter;
+    }
+    &-title {
+        font-size: 22px;
+        color: map-get(variables.$colors, 'subtitle');
+        margin-bottom: 15px;
+    }
+    &-text {
+        font-weight: 400;
+        line-height: 26px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .wrapper {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1920px) {
+    
+    .wrapper {
+        max-width: 1600px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 160px;
+        padding-left: 160px;
+    }
+
+    .text__subtitle:hover {
+        color: #F0145A;
+        &::after {
+            @include mixins.backgroundImg('../images/arrow-left-hover.png');
+        }
+    }
+}
