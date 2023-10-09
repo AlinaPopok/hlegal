@@ -8,9 +8,7 @@
 }
 
 .services {
-    padding-top: 60px;
     position: relative;
-    @include mixins.bodyColor;
     @include mixins.borderRadius(bottom, left);
     @include mixins.borderRadius(bottom, right);
 
@@ -115,8 +113,6 @@
         max-width: 1600px;
         margin-right: auto;
         margin-left: auto;
-        padding-right: 160px;
-        padding-left: 160px;
     }
 
     .text__subtitle:hover {
