@@ -4,7 +4,7 @@
 
 .partners {
     background: map-get(variables.$colors, 'text');
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .partners-title {
@@ -105,11 +105,9 @@
 @media (min-width: 1920px) {
 
     .wrapper-partners {
-        max-width: 1600px;
+        max-width: 1720px;
         margin-right: auto;
         margin-left: auto;
-        padding-right: 160px;
-        padding-left: 160px;
         padding-bottom: 60px;
     }
 
