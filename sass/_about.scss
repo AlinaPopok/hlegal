@@ -83,7 +83,9 @@
     .about-us__left-link:last-child {
         padding-right: 60px;
     }
-
+    .about-us__left-link:hover {
+        @include mixins.titleColor;
+    }
     .about-us__right {
         padding-right: 60px;
         padding-left: 60px;
@@ -163,9 +165,5 @@
 
     .about-us__right {
         grid-column: 2 / -1;
-    }
-
-    .about-us__left-link:hover {
-        @include mixins.titleColor;
     }
 }

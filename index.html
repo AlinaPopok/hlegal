@@ -104,7 +104,36 @@
             <div class="wrapper">
                 <div class="team">
                     <div class="team-img">
-                        <img src="./images/team-img.jpg" alt="" class="team-img__item">
+                        <picture>
+                            <source media="(min-width:768px) and (max-width:1024px)" type="image/avif"
+                                srcset="./images/team/team-768.avif">
+
+                            <source media="(min-width:768px) and (max-width:1024px)" type="image/webp"
+                                srcset="./images/team/team-768.webp">
+
+                            <source media="(min-width:768px) and (max-width:1024px)"
+                                srcset="./images/team/team-768.jpg">
+
+                            <source media="(min-width:1024px) and (max-width:1440px)" type="image/avif"
+                                srcset="./images/team/team-1024.avif">
+
+                            <source media="(min-width:1024px) and (max-width:1440px)" type="image/webp"
+                                srcset="./images/team/team-1024.webp">
+
+                            <source media="(min-width:1024px) and (max-width:1440px)"
+                                srcset="./images/team/team-1024.jpg">
+
+                            <source media="(min-width:1440px)" type="image/avif" srcset="./images/team/team-1440.avif">
+
+                            <source media="(min-width:1440px)" type="image/webp" srcset="./images/team/team-1440.webp">
+
+                            <source media="(min-width:1440px)" srcset="./images/team/team-1440.jpg">
+
+                            <source type="image/avif" srcset="./images/team/team-375.avif">
+                            <source type="image/webp" srcset="./images/team/team-375.webp">
+
+                            <img src="./images/team/team-375.jpg" alt="team-slider">
+                        </picture>
                     </div>
                     <div class="team-info">
                         <a href="#" class="text__subtitle">команда</a>

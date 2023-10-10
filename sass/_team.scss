@@ -3,21 +3,24 @@
 @use 'sass:map';
 
 
-.team-content{
-    background-color: map.get(variables.$colors, 'text');;
+.team-content {
+    background-color: map.get(variables.$colors, 'text');
+    padding-top: 90px;
 }
 
 .team {
-    display: flex;
-    flex-direction: column;
-    padding-top: 90px;
+    display: grid;
+    grid-template-columns: 1fr;
     overflow: hidden;
-    object-fit: cover;
-    border-radius: 12px;
-        &-img__item {
-            display: block;
-            width: 100%;
-        }
+    @include mixins.borderRadius(bottom, left);
+    @include mixins.borderRadius(bottom, right);
+
+    &-img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .team-info {
@@ -26,7 +29,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-top-right-radius: 12px;
 }
 
 .team-text {
@@ -63,9 +65,52 @@
 
 @media (min-width:768px) {
     .team {
-        flex-direction: row;
+       
+        &-img img {
+            aspect-ratio: 6/5;
+            @include mixins.borderRadius(top, left);
+            @include mixins.borderRadius(top, right);
+        }
     }
-    .team-img__item{
-        height: 100%;
+}
+
+@media (min-width:1024px) {
+    .team {
+        grid-template-columns: 1fr 1fr;
+
+        &-img img {
+            aspect-ratio: 5/4;
+            border-top-right-radius:0 ;
+        }
+        &-info{
+            @include mixins.borderRadius(top, right);
+        }
+    }
+}
+
+@media (min-width:1440px) {
+    .team {
+        grid-template-columns: repeat(3, 1fr);
+
+        &-info {
+            grid-column: 2/-1;
+        }
+
+        &-img img {
+            aspect-ratio: 3/2;
+        }
+    }
+}
+
+@media (min-width:1920px) {
+    .team {
+        grid-template-columns: repeat(4, 1fr);
+
+        &-info {
+            grid-column: 2/-1;
+        }
+        &-img img {
+            aspect-ratio: 4/3;
+        }
     }
 }
