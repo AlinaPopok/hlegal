@@ -9,7 +9,7 @@
 
 .about-us {
     display: grid;
-    gap: 30px;
+    gap: 10px;
 }
 
 .acive-title {
@@ -20,6 +20,7 @@
     display: flex;
     overflow: auto;
     gap: 30px;
+    padding-bottom: 20px;
 }
 
 
@@ -73,7 +74,7 @@
     }
 
     .about-us {
-        gap: 60px;
+        gap: 40px;
     }
 
     .about-us__left-link:first-child {

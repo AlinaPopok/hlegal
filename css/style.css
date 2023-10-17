@@ -761,7 +761,7 @@ a {
 
 .about-us {
   display: grid;
-  gap: 30px;
+  gap: 10px;
 }
 
 .acive-title {
@@ -774,6 +774,7 @@ a {
   display: flex;
   overflow: auto;
   gap: 30px;
+  padding-bottom: 20px;
 }
 
 .about-us__left-link {
@@ -827,7 +828,7 @@ a {
     padding-bottom: 60px;
   }
   .about-us {
-    gap: 60px;
+    gap: 40px;
   }
   .about-us__left-link:first-child {
     padding-left: 60px;
