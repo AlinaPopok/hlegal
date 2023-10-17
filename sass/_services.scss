@@ -103,3 +103,12 @@
     }
 }
 
+@media (min-width: 1920px) {
+    
+    .text__subtitle:hover {
+        color: #F0145A;
+        &::after {
+            @include mixins.backgroundImg('../images/arrow-left-hover.png');
+        }
+    }
+}

@@ -16,7 +16,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    background-color: map-get(variables.$colors, text);
 
 
     .publication-img {
@@ -30,6 +29,7 @@
 .publication-item {
     border-radius: 8px;
     overflow: hidden;
+    background-color: map-get(variables.$colors, text);
     .publication-content {
         display: flex;
         flex-direction: column;
