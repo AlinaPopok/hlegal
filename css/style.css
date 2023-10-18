@@ -799,7 +799,7 @@ a {
   gap: 30px;
   padding-right: 30px;
   padding-left: 30px;
-  padding-top: 30px;
+  padding-top: 34px;
 }
 .about-us__right-title {
   font-size: 20px;
@@ -844,7 +844,7 @@ a {
   .about-us__right {
     padding-right: 60px;
     padding-left: 60px;
-    padding-top: 60px;
+    padding-top: 64px;
   }
   .about-us__right::before {
     position: absolute;
