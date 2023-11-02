@@ -1,0 +1,71 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+
+.footer {
+    background-color: map-get(variables.$colors, bgColor);
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+
+        &:first-child {
+            padding-top: 30px;
+            border-top: 2px solid #E6E6F0;
+        }
+
+        &__copyright {
+            color: map-get(variables.$colors, title);
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    &-contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        &__separator {
+            display: none;
+        }
+        &__icon {
+            height: 38px;
+            width: 38px;
+        }
+
+        &__icon path {
+            fill: map-get(variables.$colors, subtitle);
+        }
+
+        &__phone {
+            color: #46466E;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+
+        &-contacts {
+            flex-direction: row;
+            &__separator {
+                display: block;
+                background-color: map-get(variables.$colors, title);
+            }
+        }
+        &-content{
+            position: relative;
+            &__copyright {
+                position: absolute;
+                top: 30px;
+                right: 0;
+            }
+        }
+        
+    }
+}
