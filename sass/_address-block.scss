@@ -1,0 +1,31 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+
+
+.address-block {
+    &__separator {
+        @include mixins.beforeAfter(6px, 6px);
+        background-color: map-get(variables.$colors, separator);
+        border-radius: 50%;
+    }
+    &__address{
+        font-weight: 400;
+        color: map-get(variables.$colors, title);
+    }
+    &__icon{
+        svg{
+            height: 100%;
+            width: 100%;
+        }
+        :hover path{
+            fill: map-get(variables.$colors, hover);
+        }
+    }
+    &__map-link{
+        color: map-get(variables.$colors, subtitle);
+    }
+    &__email{
+        color: map-get(variables.$colors, subtitle);
+    }
+}

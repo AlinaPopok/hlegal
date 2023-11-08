@@ -4,8 +4,6 @@
 
 .services {
     position: relative;
-    @include mixins.borderRadius(bottom, left);
-    @include mixins.borderRadius(bottom, right);
 
     &:before {
         @include mixins.beforeAfter(10px);

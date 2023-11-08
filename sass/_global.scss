@@ -8,7 +8,7 @@
 }
 body{
     color: map.get(variables.$colors, 'text');
-    @include mixins.bodyColor;
+    background-color: map.get(variables.$colors, 'text');
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -29,7 +29,6 @@ ul{
     margin: 0;
     padding: 0;
 }
-
 li{
     list-style: none;
 }
@@ -39,6 +38,11 @@ li{
     padding-left: 30px;
 }
 
+.bg-gradient{
+    @include mixins.bodyColor;
+    @include mixins.borderRadius(bottom, left);
+    @include mixins.borderRadius(bottom, right);
+}
 @media (min-width: 768px){
     .wrapper {
         padding-right: 60px;

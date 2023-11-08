@@ -1,0 +1,66 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+
+
+.modal-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(50, 50, 100, 0.7);
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px;
+        width: 359px;
+        z-index: 999999;
+        background-color: map-get(variables.$colors, text);
+        @include mixins.borderRadius(top, left);
+        @include mixins.borderRadius(top, right);
+        margin: 0 auto;
+    }
+
+    &__item {
+        background-color: map-get(variables.$colors, bgColor);
+        padding-top: 7px;
+        padding-bottom: 7px;
+        text-align: center;
+        border-radius: 12px;
+        &--active{
+            background-color: map-get(variables.$colors, separator);
+        }
+        &:first-child {
+            text-align: right;
+            background-color: inherit;
+        }
+    }
+
+    &__link {
+        font-size: 24px;
+        color: map-get(variables.$colors, subtitle);
+        &--active{
+            color: map-get(variables.$colors, hover);
+        }
+
+        &--close {
+            display: inline-block;
+            background-image: url(../images/modal-close.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+            height: 32px;
+            width: 32px;
+        }
+    }
+    &--close{
+        display: none;
+    }
+}
