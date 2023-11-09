@@ -1,0 +1,113 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+
+.header-services {
+    background-image: none;
+    height: inherit;
+}
+
+.services-about {
+    &__item {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.50);
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        align-items: center;
+    }
+
+    &__card-logo {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    &__text {
+        font-size: 19px;
+        text-align: center;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    &__button {
+        background-color: map-get(variables.$colors, subtitle);
+        padding: 18px 30px;
+        border-radius: 12px;
+    }
+}
+
+
+
+.services-info {
+    position: relative;
+    padding-top: 30px;
+    &:before {
+        @include mixins.beforeAfter(10px);
+        position: absolute;
+        bottom: -20px;
+        left: 40px;
+        right: 40px;
+        @include mixins.borderRadius(bottom, left);
+        @include mixins.borderRadius(bottom, right);
+        background-color: rgba(202, 202, 219, 1);
+
+    }
+
+    &:after {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        @include mixins.beforeAfter(10px);
+        background-color: rgba(231, 231, 242, 1);
+        @include mixins.borderRadius(bottom, left);
+        @include mixins.borderRadius(bottom, right);
+    }
+&__item{
+    padding-bottom: 60px;
+}
+&__title{
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+    &__lists {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &-item {
+            display: inline-flex;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+            gap: 8px;
+        }
+    }
+}
+.services-spaces{
+    padding-top: 60px;
+}
+@media(min-width:768px) {
+    .services-about {
+        &__item {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+    .services-info{
+        &__lists {
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+    }
+}

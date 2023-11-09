@@ -24,6 +24,8 @@
     }
     &__map-link{
         color: map-get(variables.$colors, subtitle);
+        text-transform: uppercase;
+        font-size: 12px;
     }
     &__email{
         color: map-get(variables.$colors, subtitle);
