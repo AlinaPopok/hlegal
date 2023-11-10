@@ -1,0 +1,112 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+.footer-content-team:first-child{
+    padding-top: 0;
+    border: none;
+}
+.team-page {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &-img {
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+        }
+
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            &-title {
+                color: #323264;
+                font-size: 16px;
+
+                &:hover {
+                    color: map-get(variables.$colors, hover);
+                    ;
+                }
+            }
+
+            &-text {
+                font-size: 14px;
+                color: map-get(variables.$colors, title);
+                font-weight: 400;
+                line-height: 22px;
+            }
+        }
+
+        &-arrow:hover {
+            circle {
+                fill: #EDEDF7;
+            }
+
+            path {
+                stroke: map-get(variables.$colors, hover);
+            }
+        }
+    }
+}
+
+@media(min-width:768px) {
+    .team-page {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        &__title{
+        margin-bottom: 60px;
+        }
+        &__cards {
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+    }
+}
+@media(min-width:1024px) {
+    .team-page {
+        &__title{
+            padding-right: 180px;
+            padding-left: 180px;
+            }
+    }
+}
+@media(min-width:1440px) {
+    .team-page {
+        &__cards {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+@media(min-width:1024px) {
+    .team-page {
+        &__title{
+            max-width: 1360px;
+            padding-left: 0;
+            padding-right: 0;
+            margin-right: auto;
+            margin-left: auto;
+            }
+    }
+}

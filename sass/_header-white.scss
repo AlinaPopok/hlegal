@@ -1,0 +1,55 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:map';
+
+
+.header-white-bg{
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 5;
+}
+.header-bgcolor--white-bg{
+    background-color: map-get(variables.$colors, bgColor );
+}
+.white-bg--main-color{
+    color: map-get(variables.$colors, title );
+    svg path{
+        fill: map-get(variables.$colors, title );
+    }
+}
+
+.lang-menu__item.white-bg--main-color:hover{
+    background-color: #F5F5FA;
+}
+.white-bg--text-color{
+    color: #323264;
+}
+
+.white-bg--link-color{
+    color: map-get(variables.$colors, subtitle );
+    &:hover{
+        border-color: map-get(variables.$colors, subtitle );
+    }
+}
+
+.popup-btn--white-bg {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
+    @include mixins.backgroundImg('../images/header/popup-btn-white-bg.svg');
+
+    &--active {
+        background-image: url(../images/header/popup-btn-active.svg);
+    }
+}
+
+@media(min-width:768px){
+    .header-bgcolor--white-bg{
+        background-color:transparent;
+    }
+}
+

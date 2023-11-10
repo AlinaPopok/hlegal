@@ -10,9 +10,11 @@
     &-content {
         display: flex;
         flex-direction: column;
-        gap: 21px;
-
-        &:first-child {
+        gap: 30px;
+        &__item{
+            display: flex;
+            flex-direction: column;
+            gap: 21px;
             padding-top: 30px;
             border-top: 2px solid #E6E6F0;
         }
@@ -52,21 +54,26 @@
 
 @media(min-width:768px) {
     .footer {
-        &-content {
-            position: relative;
-            &__copyright {
-                position: absolute;
-                top: 30px;
-                right: 0;
-            }
-        }
-
         &-address-block {
             flex-direction: row;
             justify-content: start;
             &__separator {
                 display: block;
                 background-color: map-get(variables.$colors, title);
+            }
+        }
+    }
+
+}
+
+@media(min-width:1024px){
+    .footer{
+        &-content {
+            position: relative;
+            &__copyright {
+                position: absolute;
+                top: 30px;
+                right: 0;
             }
         }
     }
