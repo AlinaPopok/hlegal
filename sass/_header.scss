@@ -7,12 +7,14 @@
 
 
 .header {
-    position: sticky;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
     z-index: 5;
-    background-color: #323264;
+    &-scroll{
+        background-color: #323264;
+    }
     &-bgcolor {
         background-color: rgba(245, 245, 250, 0.20);
     }
